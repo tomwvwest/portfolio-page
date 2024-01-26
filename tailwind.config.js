@@ -7,11 +7,12 @@ module.exports = {
   ],
   theme: {
     colors: {
-      blue: '##001F3F',
+      blue: '#001F3F',
       smoke: '#f2f2f2',
       gold: '#FFD700',
       red: '#fe5f55',
-      jet: '#333333'
+      jet: '#333333',
+      white: '#FFFFFF',
     },
     extend: {
       backgroundImage: {
