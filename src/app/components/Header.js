@@ -2,12 +2,13 @@ import Link from "next/link";
 
 export const Header = () => {
   return (
-    <div className="bg-blue text-white flex p-6 items-center">
-      <p className="flex-grow text-xl ml-4">tom west</p>
+    <div className="bg-blue text-white flex p-6 items-center fixed w-screen border-b border-white border-opacity-15">
+      <img src="memoji.png" className="w-14 ml-3"></img>
+      <p className="flex-grow text-xl ml-2">tom west</p>
       <ul className="flex justify-between items-center w-80">
-        <li className="hover:underline">Home</li>
-        <li className="hover:underline">About</li>
-        <li className="hover:underline">Projects</li>|
+        <li className="hover:underline">home</li>
+        <li className="hover:underline">about</li>
+        <li className="hover:underline">projects</li>|
         <li className="flex items-center justify-between">
           <Link href="https://github.com/tomwvwest">
             <img
