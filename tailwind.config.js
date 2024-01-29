@@ -13,6 +13,7 @@ module.exports = {
       red: '#fe5f55',
       jet: '#333333',
       white: '#FFFFFF',
+      glaucous: '#6883BA'
     },
     extend: {
       backgroundImage: {
