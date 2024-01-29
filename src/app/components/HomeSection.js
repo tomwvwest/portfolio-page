@@ -9,8 +9,7 @@ export const HomeSection = () => {
         <p>hello, my name is</p>
         <p className="text-8xl font-bold">tom.</p>
         <p className="mt-3">
-          i am a junior software engineer and physics graduate from
-          hertfordshire looking to put my problem solving and technical skills
+          i am a junior software engineer and university of bath physics graduate looking to put my problem solving and technical skills
           into contributing to innovative solutions.
         </p>
         <p className="mt-3">my goal is to become an elite software engineer.</p>

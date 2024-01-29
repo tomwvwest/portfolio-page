@@ -12,6 +12,11 @@ function scrollToAbout() {
     top: 700,
   });
 }
+function scrollToProjects() {
+  window.scrollTo({
+    top: 1635,
+  });
+}
 
 export const Header = () => {
   return (
@@ -31,15 +36,15 @@ export const Header = () => {
         >
           about
         </li>
-        <li className="hover:underline">projects</li>|
+        <li className="hover:underline hover:cursor-pointer" onClick={scrollToProjects}>projects</li>|
         <li className="flex items-center justify-between">
-          <Link href="https://github.com/tomwvwest">
+          <Link href="https://github.com/tomwvwest" target="_blank">
             <img
               src="github_logo.png"
               className="invert mr-2 w-9 hover:opacity-70"
             ></img>
           </Link>
-          <Link href="http://www.linkedin.com/in/tomwvwest">
+          <Link href="http://www.linkedin.com/in/tomwvwest" target="_blank">
             <img
               src="linked_in_logo.png"
               className="invert w-10 hover:opacity-70"
