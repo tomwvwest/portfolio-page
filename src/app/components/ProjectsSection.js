@@ -117,7 +117,7 @@ export const ProjectSection = () => {
         <hr className="opacity-30 my-8" />
 
         <div className="mt-6 flex lg:flex-row flex-col ">
-          <div className=" lg:w-2/5 w-2/5 relative self-center min-w-[250px] max-w-[300px] mb-10">
+          <div className=" lg:w-2/5 w-2/5 relative self-center min-w-[280px] max-w-[300px] mb-10">
             <img
               src={newsUrls[currentNewsUrl]}
               className=" rounded-2xl"

@@ -64,7 +64,7 @@ export const Header = () => {
           <img src="menu.png" className="invert w-7 min-w-7"></img>
           {isMenuOpen ? (
             <ul
-              className={`absolute bg-smoke text-blue p-1 rounded-xl -bottom-[8.5rem] -left-20 w-32 text-center`}
+              className={`absolute bg-smoke text-blue p-1 rounded-xl -bottom-[8.5rem] -left-20 w-32 text-center border `}
               id="dropDown"
             >
               <li
@@ -73,7 +73,7 @@ export const Header = () => {
               >
                 home
               </li>
-              <hr className="my-1 opacity-40"></hr>
+              <hr className="my-1 opacity-40 "></hr>
               <li
                 className="hover:cursor-pointer hover:bg-jet hover:bg-opacity-40 transition rounded p-1"
                 onClick={scrollToAbout}
