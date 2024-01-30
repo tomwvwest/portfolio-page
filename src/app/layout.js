@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={roboto.className}>
         <Header />
-        <div className="smooth-scroll pt-24">{children}</div>
+        <div className="smooth-scroll lg:pt-24 pt-12">{children}</div>
       </body>
     </html>
   );

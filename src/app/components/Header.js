@@ -18,6 +18,19 @@ export const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      const specific = document.getElementById("dropDown");
+      if (specific && isMenuOpen && !specific.contains(e.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   function scrollToHome() {
     window.scrollTo({
       top: 0,
@@ -37,17 +50,23 @@ export const Header = () => {
   }
 
   return (
-    <div className="bg-blue text-white flex p-6 items-center fixed w-screen border-b border-white border-opacity-15 z-[100]">
+    <div className="bg-blue text-white flex lg:p-6 px-4 py-2 items-center fixed w-screen border-b border-white border-opacity-15 z-[100]">
       <img src="memoji.png" className="w-14 lg:ml-3"></img>
-      <p className="flex-grow text-xl ml-2">tom west</p>
+      <p className="flex-grow text-xl ml-2 ">tom west</p>
+      <div className="flex">
       {isSmallScreen ? (
         <div
-          className="border p-1 rounded-lg hover:cursor-pointer relative"
+          className={`border p-1 rounded-lg hover:cursor-pointer relative ${
+            isMenuOpen ? "bg-smoke bg-opacity-30" : null
+          }`}
           onClick={handleMenuClick}
         >
-          <img src="menu.png" className="invert"></img>
+          <img src="menu.png" className="invert w-7 min-w-7"></img>
           {isMenuOpen ? (
-            <ul>
+            <ul
+              className={`absolute bg-smoke text-blue p-1 rounded-xl -bottom-[8.5rem] -left-20 w-32 text-center`}
+              id="dropDown"
+            >
               <li
                 className="hover:cursor-pointer hover:bg-jet hover:bg-opacity-40 transition rounded p-1"
                 onClick={scrollToHome}
@@ -93,8 +112,8 @@ export const Header = () => {
           </li>
         </ul>
       )}
-      <ul className="flex justify-between items-center ml-2">
-        |
+      <ul className={`flex justify-between items-center ml-2 ${isSmallScreen ? 'order-first' : null}`}>
+        {!isSmallScreen ? ' | ' : null}
         <li className="flex items-center justify-between ml-2">
           <Link href="https://github.com/tomwvwest" target="_blank">
             <img
@@ -109,7 +128,9 @@ export const Header = () => {
             ></img>
           </Link>
         </li>
+        {isSmallScreen ? <p className="pr-3 pl-2"> | </p> : null}
       </ul>
+      </div>
     </div>
   );
 };
