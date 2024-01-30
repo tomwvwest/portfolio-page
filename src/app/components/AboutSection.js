@@ -14,7 +14,7 @@ export const AboutSection = () => {
   }
 
   return (
-    <section className=" h-[120vh] bg-smoke pt-24 p-5 text-blue">
+    <section className=" h-[120vh] bg-smoke pt-24 p-5 text-blue" id="aboutSection">
       <div className="translate-x-36 translate-y-10 w-fit">
         <div className="flex items-end mb-10">
           <img src="about.png" className="w-8"></img>
