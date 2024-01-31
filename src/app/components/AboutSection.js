@@ -1,18 +1,27 @@
+'use client'
 import { useEffect, useState } from "react";
 
 export const AboutSection = () => {
   const [displayText, setDisplayText] = useState("profile");
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [sectionHeight, setSectionHeight] = useState('1000')
 
   const checkScreenWidth = () => {
     setIsSmallScreen(window.innerWidth <= 680);
   };
 
   useEffect(() => {
-    checkScreenWidth();
-    window.addEventListener("resize", checkScreenWidth);
+    const handleResize = () => {
+      checkScreenWidth();
+      getHeight();
+    };
+  
+    handleResize(); 
+  
+    window.addEventListener("resize", handleResize);
+  
     return () => {
-      window.removeEventListener("resize", checkScreenWidth);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -23,21 +32,19 @@ export const AboutSection = () => {
 
   function getHeight(){
     const element1 = document.getElementById('aboutSection')
-    const element2 = document.getElementById('projectsSection')
-    console.dir(element1)
-    // const rect1 = element1.getBoundingClientRect()
-    // const rect2 = element2.getBoundingClientRect()
+    const element2 = document.getElementById('educationSection')
 
-    // const distance = Math.abs(rect1.top - rect2.top);
+    const rect1 = element1.getBoundingClientRect()
+    const rect2 = element2.getBoundingClientRect()
 
-    // console.log(distance)
+    const distance = Math.abs(rect1.top - rect2.bottom) + 100;
+    setSectionHeight(distance)
   }
-
-  getHeight()
 
   return (
     <section
-      className="lg:h-[150vh] h-[200vh] bg-smoke py-16 lg:px-16 px-10 pt-24 p-5 text-blue"
+      className={`
+      bg-smoke py-16 lg:px-16 px-10 pt-24 p-5 text-blue`} style={{height: sectionHeight + 'px'}}
       id="aboutSection"
     >
       <div className={` flex ${isSmallScreen ? "justify-center" : null}`}>
@@ -58,12 +65,12 @@ export const AboutSection = () => {
             <p
               onClick={changeState}
               className={`${
-                displayText === "profile"
+                displayText === "overview"
                   ? "underline text-red"
                   : "hover:opacity-70 hover:cursor-pointer"
               } ${isSmallScreen ? "text-center col-span-2" : null}`}
             >
-              profile
+              overview
             </p>
             <p
               onClick={changeState}
@@ -110,7 +117,7 @@ export const AboutSection = () => {
           <div className={` ${isSmallScreen ? "flex justify-center" : null}`}>
             <div
               className={`border-t p-3 w-[70vw] mt-5 absolute transition duration-500 ${
-                displayText === "profile" ? "opacity-100" : "opacity-0"
+                displayText === "overview" ? "opacity-100" : "opacity-0"
               } ${isSmallScreen ? "w-[90vw] text-center" : null}`}
             >
               <p className="mt-2">
@@ -229,7 +236,7 @@ export const AboutSection = () => {
               className={`border-t p-3 w-[70vw] mt-5 absolute ${
                 displayText === "education" ? "opacity-100" : "opacity-0"
               } ${isSmallScreen ? "w-[90vw]" : null} transition duration-500`}
-            >
+            id="educationSection">
               <ul className="mt-3">
                 <li className="grid lg:grid-cols-3">
                   <div
@@ -283,13 +290,13 @@ export const AboutSection = () => {
                     <img
                       src="uni.jpeg"
                       className={`rounded-3xl col-span-1 object-cover ${
-                        isSmallScreen ? "mt-3 w-[80rem] h-[20rem]" : "w-96 h-40"
+                        isSmallScreen ? "mt-3 w-[80rem] h-[10rem]" : "w-96 h-40"
                       }`}
                     ></img>
                     <img
                       src="rc-car.jpeg"
                       className={`rounded-3xl col-span-1 object-cover ${
-                        isSmallScreen ? "mt-3 w-[80rem] h-[20rem]" : "w-96 h-40"
+                        isSmallScreen ? "mt-3 w-[80rem] h-[10rem]" : "w-96 h-40"
                       }`}
                     ></img>
                   </div>
@@ -305,7 +312,7 @@ export const AboutSection = () => {
                     <li>A-Levels: Maths(A), Physics(B), Geography(B).</li>
                     <li>11 GCSEs: 3A*s, 4As, 3Bs, 1C.</li>
                     <li>Captained Badminton and Table Tennis teams. </li>
-                    <li>Earned Duke of Edinburugh Bronze Award</li>
+                    <li>Earned Duke of Edinburgh Bronze Award</li>
                   </ul>
                 </li>
               </ul>
