@@ -217,11 +217,11 @@ export const AboutSection = () => {
             <div
               className={`border-t p-3 w-[70vw] mt-5 absolute ${
                 displayText === "education" ? "opacity-100" : "opacity-0"
-              }  transition duration-500`}
+              } ${isSmallScreen ? "w-[90vw]" : null} transition duration-500`}
             >
               <ul className="mt-3">
-                <li className="grid grid-cols-3">
-                  <div className=" col-span-2">
+                <li className="grid lg:grid-cols-3">
+                  <div className={`lg:col-span-2 ${isSmallScreen ? "w-[100rem]]" : null}`}>
                     <p className="font-bold">
                       University of Bath |{" "}
                       <span className=" font-normal italic text-sm">
@@ -260,14 +260,14 @@ export const AboutSection = () => {
                       </li>
                     </ul>
                   </div>
-                  <div>
+                  <div className={`border flex lg:col-span-1 lg:grid lg:grid-row-2 md:grid-rows-2 grid-col-2 my-2`}>
                     <img
                       src="uni.jpeg"
-                      className="rounded-3xl translate-y-2 col-span-1 w-96"
+                      className="rounded-3xl col-span-1 h-40 w-96 "
                     ></img>
                     <img
                       src="rc-car.jpeg"
-                      className="rounded-3xl w-96 h-48 object-cover object-bottom-[30px] mt-4"
+                      className="rounded-3xl h-40 w-96 object-cover"
                     ></img>
                   </div>
                 </li>
@@ -290,11 +290,11 @@ export const AboutSection = () => {
             <div
               className={`border-t p-3 w-[70vw] mt-5 absolute ${
                 displayText === "hobbies" ? "opacity-100" : "opacity-0"
-              }  transition duration-500`}
+              } ${isSmallScreen ? "w-[90vw]" : null} transition duration-500`}
             >
               <ul className="space-y-6 mt-4 flex flex-col items-center ">
                 <li className="flex items-center">
-                  <img src="guitar.png" className="w-7"></img>I enjoy playing my
+                  <img src="guitar.png" className="w-7 mr-1"></img>I enjoy playing my
                   acoustic guitar and bass guitar in my spare time
                 </li>
                 <li className="flex items-center">
@@ -303,7 +303,7 @@ export const AboutSection = () => {
                   <img src="badminton.png" className="w-7"></img>
                 </li>
                 <li className="flex items-center">
-                  <img src="chess.svg" className="w-6"></img>I play chess daily
+                  <img src="chess.svg" className="w-6 mr-1"></img>I play chess daily
                   and love many types of puzzle games{" "}
                 </li>
                 <li className="flex items-center">
