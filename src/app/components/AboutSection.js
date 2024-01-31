@@ -1,50 +1,56 @@
-'use client'
+"use client";
 import { useEffect, useState } from "react";
 
 export const AboutSection = () => {
-  const [displayText, setDisplayText] = useState("profile");
+  const [displayText, setDisplayText] = useState("overview");
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const [sectionHeight, setSectionHeight] = useState('1000')
+  const [sectionHeight, setSectionHeight] = useState("1000");
 
   const checkScreenWidth = () => {
     setIsSmallScreen(window.innerWidth <= 680);
   };
+
+  const getHeight = () => {
+    const id = displayText + "Section";
+    const element1 = document.getElementById("aboutSection");
+    const element2 = document.getElementById(id);
+
+    const rect1 = element1.getBoundingClientRect();
+    const rect2 = element2.getBoundingClientRect();
+
+    const distance = Math.abs(rect1.top - rect2.bottom) + 100;
+    setSectionHeight(distance);
+  }
 
   useEffect(() => {
     const handleResize = () => {
       checkScreenWidth();
       getHeight();
     };
-  
-    handleResize(); 
-  
+
+    handleResize();
+
     window.addEventListener("resize", handleResize);
-  
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [displayText]);
 
   function changeState(e) {
     const text = e.target.innerText;
     setDisplayText(text);
   }
 
-  function getHeight(){
-    const element1 = document.getElementById('aboutSection')
-    const element2 = document.getElementById('educationSection')
-
-    const rect1 = element1.getBoundingClientRect()
-    const rect2 = element2.getBoundingClientRect()
-
-    const distance = Math.abs(rect1.top - rect2.bottom) + 100;
-    setSectionHeight(distance)
-  }
+  useEffect(() => {
+    getHeight()
+  }, [displayText, isSmallScreen])
 
   return (
     <section
       className={`
-      bg-smoke py-16 lg:px-16 px-10 pt-24 p-5 text-blue`} style={{height: sectionHeight + 'px'}}
+      bg-smoke py-16 lg:px-16 px-10 pt-24 p-5 text-blue`}
+      style={{ height: sectionHeight + "px" , transition: "height 0.3s ease-in-out"}}
       id="aboutSection"
     >
       <div className={` flex ${isSmallScreen ? "justify-center" : null}`}>
@@ -119,24 +125,26 @@ export const AboutSection = () => {
               className={`border-t p-3 w-[70vw] mt-5 absolute transition duration-500 ${
                 displayText === "overview" ? "opacity-100" : "opacity-0"
               } ${isSmallScreen ? "w-[90vw] text-center" : null}`}
+              id="overviewSection"
             >
               <p className="mt-2">
                 Physics graduate with a strong passion for coding and using my
                 analytical problem-solving skills to contribute innovative
                 solutions in software development. I have recently finished an
-                intensive Software Development Bootcamp which has given me a diverse array
-                of technical skills and experience with paired programming. I am
-                eager to apply my logical mindset, creativity, and desire to
-                learn to help me reach my goal of being an elite software
-                engineer.
+                intensive Software Development Bootcamp which has given me a
+                diverse array of technical skills and experience with paired
+                programming. I am eager to apply my logical mindset, creativity,
+                and desire to learn to help me reach my goal of being an elite
+                software engineer.
               </p>
             </div>
             <div
-              className={`border-t px-5 py-3 w-[70vw] mt-5 absolute ${
+              className={`border-t px-5 py-3 w-[70vw] mt-5 absolute h-fit ${
                 displayText === "skills" ? "opacity-100" : "opacity-0"
               } ${
                 isSmallScreen ? "w-[90vw]" : null
               } transition duration-500 flex flex-col justify-between h-48`}
+              id="skillsSection"
             >
               <p>
                 <span className="font-bold">languages</span>: Javascript, using
@@ -185,6 +193,7 @@ export const AboutSection = () => {
               className={`border-t p-3 w-[70vw] mt-5 absolute ${
                 displayText === "experience" ? "opacity-100" : "opacity-0"
               } ${isSmallScreen ? "w-[90vw]" : null} transition duration-500`}
+              id="experienceSection"
             >
               <p className="font-bold mt-3">
                 Northcoders Software Engineering Bootcamp |{" "}
@@ -236,7 +245,8 @@ export const AboutSection = () => {
               className={`border-t p-3 w-[70vw] mt-5 absolute ${
                 displayText === "education" ? "opacity-100" : "opacity-0"
               } ${isSmallScreen ? "w-[90vw]" : null} transition duration-500`}
-            id="educationSection">
+              id="educationSection"
+            >
               <ul className="mt-3">
                 <li className="grid lg:grid-cols-3">
                   <div
@@ -323,6 +333,7 @@ export const AboutSection = () => {
               } ${
                 isSmallScreen ? "w-[90vw] " : null
               } text-center transition duration-500 lg:grid lg:grid-cols-3 gap-x-4 `}
+              id="hobbiesSection"
             >
               <ul className="space-y-6 mt-4 flex flex-col items-center lg:col-span-2 ">
                 <li className="flex items-center">
@@ -335,8 +346,8 @@ export const AboutSection = () => {
                   <img src="badminton.png" className="w-7"></img>
                 </li>
                 <li className="flex items-center">
-                  <img src="chess.svg" className="w-6 "></img>I play chess
-                  daily and love many types of puzzle games{" "}
+                  <img src="chess.svg" className="w-6 "></img>I play chess daily
+                  and love many types of puzzle games{" "}
                 </li>
                 <li className="flex items-center">
                   I love hiking and visit the Lake District with my family every
