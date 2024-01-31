@@ -34,7 +34,10 @@ export const ProjectSection = () => {
   }
 
   return (
-    <section className=" bg-glaucous lg:pt-24 pt-12 p-5 text-white pb-20" id='projectsSection'>
+    <section
+      className=" bg-glaucous lg:pt-24 pt-12 p-5 text-white pb-20"
+      id="projectsSection"
+    >
       <div className="px-2 lg:px-20 pt-12">
         <div className="">
           <div className="flex items-end mb-10 ">
@@ -118,10 +121,7 @@ export const ProjectSection = () => {
 
         <div className="mt-6 flex lg:flex-row flex-col ">
           <div className=" lg:w-2/5 w-2/5 relative self-center min-w-[280px] max-w-[300px] mb-10">
-            <img
-              src={newsUrls[currentNewsUrl]}
-              className=" rounded-2xl"
-            ></img>
+            <img src={newsUrls[currentNewsUrl]} className=" rounded-2xl"></img>
             <div className="flex items-center w-fit gap-3 absolute top-3 right-5">
               <button
                 id="backwardPhoto"

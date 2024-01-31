@@ -20,7 +20,7 @@ export const AboutSection = () => {
 
     const distance = Math.abs(rect1.top - rect2.bottom) + 100;
     setSectionHeight(distance);
-  }
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -43,14 +43,17 @@ export const AboutSection = () => {
   }
 
   useEffect(() => {
-    getHeight()
-  }, [displayText, isSmallScreen])
+    getHeight();
+  }, [displayText, isSmallScreen]);
 
   return (
     <section
       className={`
       bg-smoke py-16 lg:px-16 px-10 pt-24 p-5 text-blue`}
-      style={{ height: sectionHeight + "px" , transition: "height 0.3s ease-in-out"}}
+      style={{
+        height: sectionHeight + "px",
+        transition: "height 0.3s ease-in-out",
+      }}
       id="aboutSection"
     >
       <div className={` flex ${isSmallScreen ? "justify-center" : null}`}>

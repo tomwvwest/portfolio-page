@@ -1,9 +1,7 @@
 export const HomeSection = () => {
   return (
     <section className="bg-blue py-16 lg:px-16 px-10 pt-24 pb-48 text-white justify-center ">
-
       <div className="flex lg:flex-row flex-col-reverse ">
-
         <div className="h-fit rounded-3xl lg:p-10 self-center lg:w-3/5 ">
           <div className="flex items-end mb-6 ">
             <img src="home.png" className="w-8 invert"></img>
@@ -52,7 +50,6 @@ export const HomeSection = () => {
           </div>
         </div>
       </div>
-
     </section>
   );
 };

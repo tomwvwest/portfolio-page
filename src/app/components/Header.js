@@ -54,82 +54,86 @@ export const Header = () => {
       <img src="memoji.png" className="w-14 lg:ml-3"></img>
       <p className="flex-grow text-xl ml-2 ">tom west</p>
       <div className="flex">
-      {isSmallScreen ? (
-        <div
-          className={`border p-1 rounded-lg hover:cursor-pointer relative ${
-            isMenuOpen ? "bg-smoke bg-opacity-30" : null
-          }`}
-          onClick={handleMenuClick}
-        >
-          <img src="menu.png" className="invert w-7 min-w-7"></img>
-          {isMenuOpen ? (
-            <ul
-              className={`absolute bg-smoke text-blue p-1 rounded-xl -bottom-[8.5rem] -left-20 w-32 text-center border `}
-              id="dropDown"
+        {isSmallScreen ? (
+          <div
+            className={`border p-1 rounded-lg hover:cursor-pointer relative ${
+              isMenuOpen ? "bg-smoke bg-opacity-30" : null
+            }`}
+            onClick={handleMenuClick}
+          >
+            <img src="menu.png" className="invert w-7 min-w-7"></img>
+            {isMenuOpen ? (
+              <ul
+                className={`absolute bg-smoke text-blue p-1 rounded-xl -bottom-[8.5rem] -left-20 w-32 text-center border `}
+                id="dropDown"
+              >
+                <li
+                  className="hover:cursor-pointer hover:bg-jet hover:bg-opacity-40 transition rounded p-1"
+                  onClick={scrollToHome}
+                >
+                  home
+                </li>
+                <hr className="my-1 opacity-40 "></hr>
+                <li
+                  className="hover:cursor-pointer hover:bg-jet hover:bg-opacity-40 transition rounded p-1"
+                  onClick={scrollToAbout}
+                >
+                  about
+                </li>
+                <hr className="my-1 opacity-40"></hr>
+                <li
+                  className="hover:cursor-pointer hover:bg-jet hover:bg-opacity-40 transition rounded p-1"
+                  onClick={scrollToProjects}
+                >
+                  projects
+                </li>
+              </ul>
+            ) : null}
+          </div>
+        ) : (
+          <ul className="flex justify-between items-center w-56">
+            <li
+              className="hover:underline hover:cursor-pointer"
+              onClick={scrollToHome}
             >
-              <li
-                className="hover:cursor-pointer hover:bg-jet hover:bg-opacity-40 transition rounded p-1"
-                onClick={scrollToHome}
-              >
-                home
-              </li>
-              <hr className="my-1 opacity-40 "></hr>
-              <li
-                className="hover:cursor-pointer hover:bg-jet hover:bg-opacity-40 transition rounded p-1"
-                onClick={scrollToAbout}
-              >
-                about
-              </li>
-              <hr className="my-1 opacity-40"></hr>
-              <li
-                className="hover:cursor-pointer hover:bg-jet hover:bg-opacity-40 transition rounded p-1"
-                onClick={scrollToProjects}
-              >
-                projects
-              </li>
-            </ul>
-          ) : null}
-        </div>
-      ) : (
-        <ul className="flex justify-between items-center w-56">
-          <li
-            className="hover:underline hover:cursor-pointer"
-            onClick={scrollToHome}
-          >
-            home
+              home
+            </li>
+            <li
+              className="hover:underline hover:cursor-pointer"
+              onClick={scrollToAbout}
+            >
+              about
+            </li>
+            <li
+              className="hover:underline hover:cursor-pointer"
+              onClick={scrollToProjects}
+            >
+              projects
+            </li>
+          </ul>
+        )}
+        <ul
+          className={`flex justify-between items-center ml-2 ${
+            isSmallScreen ? "order-first" : null
+          }`}
+        >
+          {!isSmallScreen ? " | " : null}
+          <li className="flex items-center justify-between ml-2">
+            <Link href="https://github.com/tomwvwest" target="_blank">
+              <img
+                src="github_logo.png"
+                className="invert mr-2 w-9 min-w-9 hover:opacity-70"
+              ></img>
+            </Link>
+            <Link href="http://www.linkedin.com/in/tomwvwest" target="_blank">
+              <img
+                src="linked_in_logo.png"
+                className="invert w-10 min-w-10 hover:opacity-70"
+              ></img>
+            </Link>
           </li>
-          <li
-            className="hover:underline hover:cursor-pointer"
-            onClick={scrollToAbout}
-          >
-            about
-          </li>
-          <li
-            className="hover:underline hover:cursor-pointer"
-            onClick={scrollToProjects}
-          >
-            projects
-          </li>
+          {isSmallScreen ? <p className="pr-3 pl-2"> | </p> : null}
         </ul>
-      )}
-      <ul className={`flex justify-between items-center ml-2 ${isSmallScreen ? 'order-first' : null}`}>
-        {!isSmallScreen ? ' | ' : null}
-        <li className="flex items-center justify-between ml-2">
-          <Link href="https://github.com/tomwvwest" target="_blank">
-            <img
-              src="github_logo.png"
-              className="invert mr-2 w-9 min-w-9 hover:opacity-70"
-            ></img>
-          </Link>
-          <Link href="http://www.linkedin.com/in/tomwvwest" target="_blank">
-            <img
-              src="linked_in_logo.png"
-              className="invert w-10 min-w-10 hover:opacity-70"
-            ></img>
-          </Link>
-        </li>
-        {isSmallScreen ? <p className="pr-3 pl-2"> | </p> : null}
-      </ul>
       </div>
     </div>
   );
