@@ -21,9 +21,23 @@ export const AboutSection = () => {
     setDisplayText(text);
   }
 
+  function getHeight(){
+    const element1 = document.getElementById('aboutSection')
+    const element2 = document.getElementById('projectsSection')
+    console.dir(element1)
+    // const rect1 = element1.getBoundingClientRect()
+    // const rect2 = element2.getBoundingClientRect()
+
+    // const distance = Math.abs(rect1.top - rect2.top);
+
+    // console.log(distance)
+  }
+
+  getHeight()
+
   return (
     <section
-      className=" h-[150vh] bg-smoke py-16 lg:px-16 px-10 pt-24 p-5 text-blue"
+      className="lg:h-[150vh] h-[200vh] bg-smoke py-16 lg:px-16 px-10 pt-24 p-5 text-blue"
       id="aboutSection"
     >
       <div className={` flex ${isSmallScreen ? "justify-center" : null}`}>
@@ -103,7 +117,7 @@ export const AboutSection = () => {
                 Physics graduate with a strong passion for coding and using my
                 analytical problem-solving skills to contribute innovative
                 solutions in software development. I have recently finished an
-                intensive Software Bootcamp which has given me a diverse array
+                intensive Software Development Bootcamp which has given me a diverse array
                 of technical skills and experience with paired programming. I am
                 eager to apply my logical mindset, creativity, and desire to
                 learn to help me reach my goal of being an elite software
@@ -142,25 +156,22 @@ export const AboutSection = () => {
                 <span className="font-bold">other</span>: hosting with Netlify,
                 experience with Git, using Figma, basic experience using Python.
               </p>
-              <div className={` mt-6 ${isSmallScreen ? 'w-fit grid grid-cols-3 gap-x-20 gap-y-8 self-center' : 'flex justify-between'}`}>
-                <img src="next.png" className="w-16 h-16 self-center min-w-16"></img>
+              <div
+                className={` mt-6 ${
+                  isSmallScreen
+                    ? "w-fit grid grid-cols-3 gap-x-20 gap-y-8 self-center"
+                    : "flex justify-between"
+                }`}
+              >
                 <img
-                  src="psql.png"
-                  className="w-16 h-16 min-w-16"
+                  src="next.png"
+                  className="w-16 h-16 self-center min-w-16"
                 ></img>
+                <img src="psql.png" className="w-16 h-16 min-w-16"></img>
                 <img src="react.png" className="w-16 h-16 min-w-16"></img>
-                <img
-                  src="tailwind.png"
-                  className="w-16 h-16 min-w-16"
-                ></img>
-                <img
-                  src="prisma.png"
-                  className="w-16 h-16 min-w-16"
-                ></img>
-                <img
-                  src="javascript.png"
-                  className="w-16 h-16 min-w-16"
-                ></img>
+                <img src="tailwind.png" className="w-16 h-16 min-w-16"></img>
+                <img src="prisma.png" className="w-16 h-16 min-w-16"></img>
+                <img src="javascript.png" className="w-16 h-16 min-w-16"></img>
               </div>
             </div>
             <div
@@ -221,7 +232,11 @@ export const AboutSection = () => {
             >
               <ul className="mt-3">
                 <li className="grid lg:grid-cols-3">
-                  <div className={`lg:col-span-2 ${isSmallScreen ? "w-[100rem]]" : null}`}>
+                  <div
+                    className={`lg:col-span-2 ${
+                      isSmallScreen ? "w-[100rem]]" : null
+                    }`}
+                  >
                     <p className="font-bold">
                       University of Bath |{" "}
                       <span className=" font-normal italic text-sm">
@@ -260,14 +275,22 @@ export const AboutSection = () => {
                       </li>
                     </ul>
                   </div>
-                  <div className={`border flex lg:col-span-1 lg:grid lg:grid-row-2 md:grid-rows-2 grid-col-2 my-2`}>
+                  <div
+                    className={` flex lg:col-span-1 lg:grid lg:grid-row-2 md:grid-row-2 gap-x-4 my-2 ${
+                      isSmallScreen ? "flex-col items-center" : "grid-col-2"
+                    }`}
+                  >
                     <img
                       src="uni.jpeg"
-                      className="rounded-3xl col-span-1 h-40 w-96 "
+                      className={`rounded-3xl col-span-1 object-cover ${
+                        isSmallScreen ? "mt-3 w-[80rem] h-[20rem]" : "w-96 h-40"
+                      }`}
                     ></img>
                     <img
                       src="rc-car.jpeg"
-                      className="rounded-3xl h-40 w-96 object-cover"
+                      className={`rounded-3xl col-span-1 object-cover ${
+                        isSmallScreen ? "mt-3 w-[80rem] h-[20rem]" : "w-96 h-40"
+                      }`}
                     ></img>
                   </div>
                 </li>
@@ -290,12 +313,14 @@ export const AboutSection = () => {
             <div
               className={`border-t p-3 w-[70vw] mt-5 absolute ${
                 displayText === "hobbies" ? "opacity-100" : "opacity-0"
-              } ${isSmallScreen ? "w-[90vw]" : null} transition duration-500`}
+              } ${
+                isSmallScreen ? "w-[90vw] " : null
+              } text-center transition duration-500 lg:grid lg:grid-cols-3 gap-x-4 `}
             >
-              <ul className="space-y-6 mt-4 flex flex-col items-center ">
+              <ul className="space-y-6 mt-4 flex flex-col items-center lg:col-span-2 ">
                 <li className="flex items-center">
-                  <img src="guitar.png" className="w-7 mr-1"></img>I enjoy playing my
-                  acoustic guitar and bass guitar in my spare time
+                  <img src="guitar.png" className="w-7 mr-1"></img>I enjoy
+                  playing my acoustic guitar and bass guitar in my spare time
                 </li>
                 <li className="flex items-center">
                   I regularly play badminton for my local club, competing in
@@ -303,18 +328,20 @@ export const AboutSection = () => {
                   <img src="badminton.png" className="w-7"></img>
                 </li>
                 <li className="flex items-center">
-                  <img src="chess.svg" className="w-6 mr-1"></img>I play chess daily
-                  and love many types of puzzle games{" "}
+                  <img src="chess.svg" className="w-6 "></img>I play chess
+                  daily and love many types of puzzle games{" "}
                 </li>
                 <li className="flex items-center">
                   I love hiking and visit the Lake District with my family every
                   year<img src="mountains.png" className="w-7"></img>
                 </li>
               </ul>
-              <img
-                src="view.jpeg"
-                className="w-60 rotate-3 absolute -right-20 -bottom-56 rounded-3xl -z-10"
-              ></img>
+              <div className="lg:col-span-1 flex justify-center  mt-6 lg:m-0">
+                <img
+                  src="view.jpeg"
+                  className="lg:w-60 w-[75vw] max-w-[313px] rounded-3xl object-cover"
+                ></img>
+              </div>
             </div>
           </div>
         </div>
