@@ -35,7 +35,7 @@ export const AboutSection = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [displayText]);
+  }, [displayText, getHeight]);
 
   function changeState(e) {
     const text = e.target.innerText;
@@ -44,7 +44,7 @@ export const AboutSection = () => {
 
   useEffect(() => {
     getHeight();
-  }, [displayText, isSmallScreen]);
+  }, [displayText, isSmallScreen, getHeight]);
 
   return (
     <section
@@ -201,7 +201,7 @@ export const AboutSection = () => {
               <p className="font-bold mt-3">
                 Northcoders Software Engineering Bootcamp |{" "}
                 <span className="font-normal italic text-sm">
-                  Oct'23-Jan'24
+                  Oct&apos;23-Jan&apos;24
                 </span>
               </p>
               <ul className="list-disc space-y-2 mt-2">
@@ -232,7 +232,7 @@ export const AboutSection = () => {
                   present data, strengthening my skills in this language.
                 </li>
                 <li>
-                  I wrote Python code that simulated the physics of a Kater's
+                  I wrote Python code that simulated the physics of a Kater&apos;s
                   pendulum to calculate various associated parameters and code
                   that compared images of the night sky to detect passing comets
                   and used LaTeX to produce my report.

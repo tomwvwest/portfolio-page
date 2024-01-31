@@ -50,14 +50,14 @@ export const ProjectSection = () => {
               <p className="flex lg:flex-row flex-col items-baseline">
                 <span className="font-bold text-3xl">Gym App </span>
                 <span className="font-normal italic text-sm lg:pl-4">
-                  Group Project | Dec'23-Jan'24
+                  Group Project | Dec&apos;23-Jan&apos;24
                 </span>{" "}
               </p>
               <ul className="list-disc mt-4 ml-6 space-y-2">
                 <li>
                   This three-week group project resulted in a functioning gym
                   app, built using Next.js and Prisma, which could track a
-                  user's gym progress and post it on their profile.
+                  user&apos;s gym progress and post it on their profile.
                 </li>
                 <li>
                   I stepped up to head the front-end and tasked myself with
@@ -146,7 +146,7 @@ export const ProjectSection = () => {
             <p className="pt-4 flex lg:flex-row flex-col items-baseline">
               <span className="font-bold text-3xl">News App </span>
               <span className=" font-normal italic text-sm lg:pl-4">
-                Solo Project | Dec'23
+                Solo Project | Dec&apos;23
               </span>{" "}
             </p>
             <ul className="list-disc mt-4 ml-6 space-y-4">
