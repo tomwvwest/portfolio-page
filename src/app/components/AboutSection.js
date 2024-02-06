@@ -11,7 +11,7 @@ export const AboutSection = () => {
   };
 
   const getHeight = () => {
-    const id = displayText + "Section";
+    const id = displayText === 'tech skills' ? "skillsSection" : displayText + 'Section';
     const element1 = document.getElementById("aboutSection");
     const element2 = document.getElementById(id);
 
@@ -84,12 +84,12 @@ export const AboutSection = () => {
             <p
               onClick={changeState}
               className={`${
-                displayText === "skills"
+                displayText === "tech skills"
                   ? "underline text-red"
                   : "hover:opacity-70 hover:cursor-pointer"
               } ${isSmallScreen ? "text-center col-span-2" : null}`}
             >
-              skills
+              tech skills
             </p>
             <p
               onClick={changeState}
@@ -143,14 +143,14 @@ export const AboutSection = () => {
             </div>
             <div
               className={`border-t px-5 py-3 w-[70vw] mt-5 absolute h-fit ${
-                displayText === "skills" ? "opacity-100" : "opacity-0"
+                displayText === "tech skills" ? "opacity-100" : "opacity-0"
               } ${
                 isSmallScreen ? "w-[90vw]" : null
               } transition duration-500 flex flex-col justify-between h-48`}
               id="skillsSection"
             >
               <p>
-                <span className="font-bold">languages</span>: Javascript, using
+                <span className="font-bold">languages</span>: JavaScript, using
                 Node.js and browsers as environments.
               </p>
               <p>
