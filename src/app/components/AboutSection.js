@@ -11,7 +11,8 @@ export const AboutSection = () => {
   };
 
   const getHeight = () => {
-    const id = displayText === 'tech skills' ? "skillsSection" : displayText + 'Section';
+    const id =
+      displayText === "tech skills" ? "skillsSection" : displayText + "Section";
     const element1 = document.getElementById("aboutSection");
     const element2 = document.getElementById(id);
 
@@ -131,14 +132,14 @@ export const AboutSection = () => {
               id="overviewSection"
             >
               <p className="mt-2">
-                Physics graduate with a strong passion for coding and using my
-                analytical problem-solving skills to contribute innovative
-                solutions in software development. I have recently finished an
-                intensive Software Development Bootcamp which has given me a
-                diverse array of technical skills and experience with paired
-                programming. I am eager to apply my logical mindset, creativity,
-                and desire to learn to help me reach my goal of being an elite
-                software engineer.
+                Software developer with 2 years of experience, seeking a role
+                where I can apply my problem-solving skills to build innovative
+                software solutions. With a passion for writing clean code and
+                building maintainable systems, I strive to deliver software that
+                balances technical excellence with real business value. I am
+                eager to apply my logical mindset, creativity, and drive to
+                learn as I work toward my goal of becoming an elite software
+                developer.
               </p>
             </div>
             <div
@@ -150,29 +151,29 @@ export const AboutSection = () => {
               id="skillsSection"
             >
               <p>
-                <span className="font-bold">languages</span>: JavaScript, using
-                Node.js and browsers as environments.
+                <span className="font-bold">languages</span>: C#, TypeScript,
+                Visual Basic, using Node.js and browsers as environments.
               </p>
               <p>
                 <span className="font-bold">testing</span>:
-                Test-Driven-Development (TDD), Jest, SuperTest.
+                Test-Driven-Development (TDD), xUnit, Jest, SuperTest.
               </p>
               <p>
-                <span className="font-bold">front-end</span>: React, Next.js,
-                HTML, CSS, Tailwind and other accessibility tools.
+                <span className="font-bold">front-end</span>: HTML, CSS, React,
+                Next.js, Tailwind and other accessibility tools.
               </p>
               <p>
                 <span className="font-bold">back-end</span>: SQL, PSQL, Prisma,
-                seeding, migrations
+                seeding, migrations.
               </p>
               <p>
-                <span className="font-bold">soft skills</span>: paired
+                <span className="font-bold">soft skills</span>: Paired
                 programming, technical communication, agile and SCRUM
-                methodologies;.
+                methodologies.
               </p>
               <p>
-                <span className="font-bold">other</span>: hosting with Netlify,
-                experience with Git, using Figma, basic experience using Python.
+                <span className="font-bold">dev tools</span>: Git, Azure, Visual
+                Studio, VSCode, Postman, BitBucket, TeamCity, Jira, Miro.
               </p>
               <div
                 className={` mt-6 ${
@@ -198,32 +199,87 @@ export const AboutSection = () => {
               } ${isSmallScreen ? "w-[90vw]" : null} transition duration-500`}
               id="experienceSection"
             >
-              <p className="font-bold mt-3">
+              <p className="font-bold mt-3 text-lg">
+                Software Developer - EMaC |{" "}
+                <span className="font-normal italic text-sm">
+                  Mar&apos;24 - Present
+                </span>
+              </p>
+              <h3 className="italic underline mt-4 mb-2">Responsibilities</h3>
+              <ul className="list-disc space-y-2 mt-2">
+                <li>
+                  Present work and ideas to business stakeholders each week,
+                  suggesting technical approaches and gathering feedback.
+                </li>
+                <li>
+                  Develop readable, reusable, and future-proof code to reduce
+                  technical debt and improve sustainability.
+                </li>
+                <li>
+                  Perform daily peer reviews to foster clean code and continuous
+                  improvement.
+                </li>
+                <li>
+                  Regularly develop complex SQL queries, functions, and stored
+                  procedures across multiple database environments, focusing on
+                  efficiency when handling large datasets.
+                </li>
+                <li>
+                  Collaborate with QA to enhance testing coverage and discuss
+                  improvements to UX.
+                </li>
+                <li>
+                  Work with Scrum and Kanban, participating in multiple squads
+                  to absorb business logic and support peers.
+                </li>
+              </ul>
+
+              <h3 className="italic underline mt-4 mb-2">Skills</h3>
+              <ul className="list-disc space-y-2 mt-2">
+                <li>
+                  Identify and resolve defects in a team dedicated to live
+                  issues for 6 months.
+                </li>
+                <li>
+                  Rapidly learned TypeScript, C# and Visual Basic to deliver
+                  features in a fast-paced environment.
+                </li>
+                <li>
+                  Proficient in Git and Azure, managing environments, branching
+                  strategies, and deployments to support fortnightly releases.
+                </li>
+                <li>
+                  Utilize Jira and Miro to their full extent, maximizing
+                  efficiency and driving team improvement.
+                </li>
+              </ul>
+
+              <p className="font-bold mt-10 text-lg">
                 Northcoders Software Engineering Bootcamp |{" "}
                 <span className="font-normal italic text-sm">
-                  Oct&apos;23-Jan&apos;24
+                  Oct&apos;23 - Jan&apos;24
                 </span>
               </p>
               <ul className="list-disc space-y-2 mt-2">
                 <li>
-                  Recently completed a 13-week intensive Software Engineering
-                  course which has educated me in a diverse range of coding
-                  languages and solidified my technical skills and interest
-                  surrounding software engineering.
+                  Completed a 13-week intensive Software Engineering course
+                  which educated me in a diverse range of coding languages and
+                  solidified my technical skills and interest surrounding
+                  software engineering.
                 </li>
                 <li>
-                  Working regularly with new partners has hugely strengthened my
+                  Working regularly with new partners hugely strengthened my
                   technical communication, adaptability and comfort in
                   driver/navigator roles.
                 </li>
                 <li>
-                  Covering challenging new topics daily has fostered my ability
-                  to quickly pick up new skills.
+                  Covering challenging new topics daily fostered my ability to
+                  quickly pick up new skills.
                 </li>
               </ul>
-              <p className="font-bold mt-8">
+              <p className="font-bold mt-10 text-lg">
                 University Experiments |{" "}
-                <span className="font-normal italic text-sm">2019-2023</span>
+                <span className="font-normal italic text-sm">2019 - 2023</span>
               </p>
               <ul className="list-disc space-y-2 mt-2">
                 <li>
@@ -232,10 +288,10 @@ export const AboutSection = () => {
                   present data, strengthening my skills in this language.
                 </li>
                 <li>
-                  I wrote Python code that simulated the physics of a Kater&apos;s
-                  pendulum to calculate various associated parameters and code
-                  that compared images of the night sky to detect passing comets
-                  and used LaTeX to produce my report.
+                  I wrote Python code that simulated the physics of a
+                  Kater&apos;s pendulum to calculate various associated
+                  parameters and code that compared images of the night sky to
+                  detect passing comets and used LaTeX to produce my report.
                 </li>
                 <li>
                   Gained leadership skills by planning group experiments,
