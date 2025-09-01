@@ -10,7 +10,7 @@ export const HomeSection = () => {
           <p>hello, my name is</p>
           <p className="text-8xl font-bold">tom.</p>
           <p className="mt-3">
-            i am a junior software engineer and university of bath physics
+            i am a full stack software developer and university of bath physics
             graduate looking to put my problem solving and technical skills into
             contributing to innovative solutions.
           </p>
@@ -20,12 +20,12 @@ export const HomeSection = () => {
           <p className="mt-3 opacity-70">
             contact me:{" "}
             <span className="italic text-red">tomwvwest@gmail.com</span> /{" "}
-            <span className="italic text-red">07807376734</span>
+            <span className="italic text-red">07807 376734</span>
           </p>
           <p className="opacity-70">
             my CV:{" "}
             <a
-              href="/TomWestCV.pdf"
+              href="/TomWestCV2025.pdf"
               target="_blank"
               className="hover:cursor-pointer hover:underline text-red"
             >
@@ -33,7 +33,7 @@ export const HomeSection = () => {
             </a>{" "}
             /{" "}
             <a
-              href="/TomWestCV.pdf"
+              href="/TomWestCV2025.pdf"
               download
               className="hover:cursor-pointer hover:underline text-red"
             >
