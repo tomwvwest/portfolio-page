@@ -25,7 +25,7 @@ export const HomeSection = () => {
           <p className="opacity-70">
             my CV:{" "}
             <a
-              href="/TomWestCV2025.pdf"
+              href="/TomWestCV2026-NoContactInfo.pdf"
               target="_blank"
               className="hover:cursor-pointer hover:underline text-red"
             >
@@ -33,7 +33,7 @@ export const HomeSection = () => {
             </a>{" "}
             /{" "}
             <a
-              href="/TomWestCV2025.pdf"
+              href="/TomWestCV2026-NoContactInfo.pdf"
               download
               className="hover:cursor-pointer hover:underline text-red"
             >
